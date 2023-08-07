@@ -273,20 +273,31 @@ contract GameItem is ERC721Enumerable, ContextMixin, NativeMetaTransaction, Owna
         return _balances[wallet];
     }
 
-function getTokensOfOwner(address owner) public view returns (string[] memory) {
+function getTokensOfOwner(address owner) public view returns (string memory) {
     uint256 tokenCount = balanceOf(owner);
 
     if (tokenCount == 0) {
-        // Return an empty array
-        return new string[](0);
+        // Return an empty array in JSON format
+        return "[]";
     } else {
-        string[] memory tokens = new string[](tokenCount);
+        string memory json = "[";
+
         for (uint256 i = 0; i < tokenCount; i++) {
-            tokens[i] = tokenURI(tokenOfOwnerByIndex(owner, i));
+            string memory tokenURI = tokenURI(tokenOfOwnerByIndex(owner, i));
+
+            // Add tokenURI to the JSON string
+            if (i > 0) {
+                json = string(abi.encodePacked(json, ","));
+            }
+            json = string(abi.encodePacked(json, '"', tokenURI, '"'));
         }
-        return tokens;
+
+        // Close the JSON array and return
+        json = string(abi.encodePacked(json, "]"));
+        return json;
     }
 }
+
 
 }
 

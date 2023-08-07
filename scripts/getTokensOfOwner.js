@@ -2,23 +2,25 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-    const contractAddress = "0x643D5cf6fdd9Faa3825e194e925D07E290E993D2";
+    const contractAddress = "0xC9740fB8Ea3aCbf646E2A83377c5743183902166";
     const walletAddress = "0x204f9781DDcafB4a844fd12250dB15183C67cACB";
 
     const GameItem = await ethers.getContractFactory("GameItem");
     const gameItem = GameItem.attach(contractAddress);
 
     const tokensOfOwner = await gameItem.getTokensOfOwner(walletAddress);
+    const parsedTokens = JSON.parse(tokensOfOwner);
 
+    console.log(`Raw output of getTokensOfOwner: ${tokensOfOwner}`);
     console.log(`Tokens owned by ${walletAddress}:`);
-    tokensOfOwner.forEach((tokenURI, index) => {
+    parsedTokens.forEach((tokenURI, index) => {
         console.log(`Token ${index + 1}: ${tokenURI}`);
     });
 }
 
 main()
     .then(() => process.exit(0))
-    .catch(error => {
+    .catch((error) => {
         console.error(error);
         process.exit(1);
     });

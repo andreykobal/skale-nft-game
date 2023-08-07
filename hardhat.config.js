@@ -61,8 +61,12 @@ module.exports = {
       accounts: [privateKey]
     },
     goerli: {
-      url: "https://rpc.ankr.com/eth_goerli",
+      url: "https://goerli.infura.io/v3/076e36dcd6c6468da918dd54435a94f9",
       accounts: [privateKey]   
+    },
+    ailand: {
+      url: "https://op.ailand.app",
+      accounts: [privateKey]
     }
 
   },
