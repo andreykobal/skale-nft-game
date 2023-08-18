@@ -41,6 +41,18 @@ module.exports = {
       chainId: 97,
       url: "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
       accounts: [privateKey],
+      gasPrice: 10000000000,
+    },
+    opbnb: {
+      chainId: 5611, 
+      url: "https://opbnb-testnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
+      accounts: [privateKey],
+      gasPrice: 10000000000,
+    },
+    bnbGreenfield: {
+      url: "https://gnfd-testnet-fullnode-tendermint-us.bnbchain.org",
+      accounts: [privateKey],
+      gasPrice: 10000000000,
     },
     auroraTestnet: {
       chainId: 1313161555,
@@ -63,8 +75,26 @@ module.exports = {
     goerli: {
       url: "https://rpc.ankr.com/eth_goerli",
       accounts: [privateKey]   
+    },
+    klaytnBaobab: {
+      chainId: 1001,
+      url: "https://public-en-baobab.klaytn.net",
+      accounts: [privateKey]
+    },
+    mumbai: {
+      chainId: 80001,
+      url: "https://rpc-mumbai.maticvigil.com",
+      accounts: [privateKey]
+    },
+    rskTestnet: {
+      url: "https://public-node.testnet.rsk.co",
+      accounts: [privateKey]   
+    },
+    mantleMainnet: {
+      chainId: 5000,
+      url: "https://rpc.testnet.mantle.xyz/",
+      accounts: [privateKey]
     }
-
   },
   //* Keep name as 'etherscan' to avoid errors.
   etherscan: {

@@ -2,7 +2,7 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-    const contractAddress = "0x643D5cf6fdd9Faa3825e194e925D07E290E993D2";
+    const contractAddress = "0xaC7e4Ad5d7557B78ebc84Dff668A06709f5Dc62B";
     const walletAddress = "0x204f9781DDcafB4a844fd12250dB15183C67cACB";
 
     const GameItem = await ethers.getContractFactory("GameItem");

@@ -228,7 +228,7 @@ contract GameItem is ERC721Enumerable, ContextMixin, NativeMetaTransaction, Owna
 
     // for opensea collection
     function contractURI() public pure returns (string memory) {
-        return "https://bafkreib4ff55r2vobbxysuu2oqipefsploizfcgamvmhxmxil4qlwyj2kq.ipfs.nftstorage.link/";
+        return "https://bafkreievw2yt27brcgijqpklsdwli2is2at3flxgbph2yivc7n7mtgc4pi.ipfs.nftstorage.link/";
     }
 
     function _msgSender() internal view override returns (address sender) {
