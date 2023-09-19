@@ -10,7 +10,7 @@ async function main() {
   const GameItem = await hre.ethers.getContractFactory("GameItem");
   //console.log(GameItem);
 
-  const gameItem = await GameItem.attach("0xaC7e4Ad5d7557B78ebc84Dff668A06709f5Dc62B");
+  const gameItem = await GameItem.attach("0x6fFE8420D0faCE10E86dbb8657F11e7CD0957e43");
 
   for (var i = 1; i <= NUM_ITEMS; i++) {
     await gameItem.mintItem("https://bafkreigjdlompxctswi2gxcsb6eyutj7xint3wpqvtnyvv7f3ya7avj3hi.ipfs.nftstorage.link/");

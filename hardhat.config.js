@@ -92,7 +92,7 @@ module.exports = {
     },
     mantleMainnet: {
       chainId: 5000,
-      url: "https://rpc.testnet.mantle.xyz/",
+      url: "https://rpc.mantle.xyz/",
       accounts: [privateKey]
     }
   },
